@@ -1,0 +1,89 @@
+body {
+  text-align: center;
+  padding-top: 1px;
+  font-family: Barlow, sans-serif;
+  font-size: 120%;
+  background: url('texture.jpg') no-repeat center center; /* Textura de fondo */
+  color: aliceblue;
+  display: block;
+}
+
+h1 {
+  color: aqua;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+#banner {
+  width: 50%;
+  height: 50px; /* Reduce the height by half */
+  background: url('woody_allen_banner.png') no-repeat center center;
+  background-size: contain; /* Ensure the image scales properly */
+  margin-bottom: 10px;
+}
+
+#game-container {
+  position: relative;
+  width: 80%;
+  height: 60vh;
+  margin: auto;
+  overflow: hidden;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: aqua;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#info-container {
+  width: 80%;
+  margin: 20px auto;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#speedDisplay, #scoreDisplay {
+  text-align: end;
+  color: aqua;
+  margin-right: 5%;
+  font-size: 80%;
+}
+
+#target {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: url('nose.png') no-repeat center center;
+  background-size: contain;
+  transition: top 0.5s, left 0.5s;
+}
+
+#timerDisplay {
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  margin-top: 10px;
+  display: block;
+}
+
+#message {
+  font-size: 18px;
+  color: aqua;
+  margin-top: 10px;
+}
+
+#restartButton {
+  padding: 10px 20px;
+  background-color: aqua;
+  color: black;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 20px auto;
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
