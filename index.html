@@ -9,12 +9,21 @@
       padding-top: 0.5px;
       font-family: Barlow, sans-serif;
       font-size: 100%;
-      background color:#4d7d87 ;
       color: white;
       display: block;
       cursor: pointer; /* Cambia el cursor a una mano */
     }
-
+ body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('texture2.jpg') repeat;
+  opacity: 0.2; /* Reducir aún más la opacidad */
+  z-index: -1; /* Asegura que el pseudo-elemento esté detrás del contenido */
+}
     h1 {
       color: #2e5b70;
       font-weight: bold;
@@ -38,9 +47,9 @@
       border-style: solid;
       border-radius: 10px;
       border-color: #B6DCE4;
-      background-color: rgba(0, 0, 0, 0.6);
-      background: url('texture.jpg') repeat;
-
+      background-color: #727272;
+      opacity: 0.9;
+    
     }
 
     #info-container {
@@ -132,8 +141,8 @@
   </div>
   <div id="info-container">
     <h2>Información sobre la película</h2>
-    <p><strong>Sleeper</strong> es una película de ciencia ficción y comedia de 1973 dirigida por Woody Allen.</p>
-    <p>En la película, un hombre que fue criogénicamente congelado es despertado 200 años después en un mundo futurista.</p>
+    <p>Cuando <strong>Sleeper</strong> fue estrenada en 1973, la sociedad estaba fascinada con la idea del futuro y los avances tecnológicos</p>
+    <p>Compartí tu puntaje en las redes sociales usando <strong>#SleeperGame</strong> y desafía a tus amigos.</p>
   </div>
 
   <audio id="background-music" src="catch.mp3" loop></audio>
