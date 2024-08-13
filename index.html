@@ -4,6 +4,27 @@
   <title>SLEEPER Woody Allen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    /* Agrega estilos para la pantalla de bienvenida */
+    #splash-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('pantalla.jpg') no-repeat center center;
+      background-size: auto;
+      z-index: 9999; /* Asegura que esté encima de todo el contenido */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 1s ease-out;
+    }
+
+    #splash-screen.hidden {
+      opacity: 0;
+      pointer-events: none; /* Evita que la pantalla de bienvenida interrumpa la interacción con el contenido */
+    }
+
     body {
       text-align: center;
       padding-top: 0.5px;
@@ -13,17 +34,18 @@
       display: block;
       cursor: pointer; /* Cambia el cursor a una mano */
     }
- body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('texture2.jpg') repeat;
-  opacity: 0.2; /* Reducir aún más la opacidad */
-  z-index: -1; /* Asegura que el pseudo-elemento esté detrás del contenido */
-}
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: url('texture2.jpg') repeat;
+      z-index: -1; /* Asegura que el pseudo-elemento esté detrás del contenido */
+    }
+
     h1 {
       color: #2e5b70;
       font-weight: bold;
@@ -48,8 +70,6 @@
       border-radius: 10px;
       border-color: #B6DCE4;
       background: url('texture.jpg') repeat;
-      opacity: 0.9;
-    
     }
 
     #info-container {
@@ -122,10 +142,15 @@
       top: 10px;
       left: 10px;
     }
-
   </style>
 </head>
 <body>
+  <!-- Pantalla de bienvenida -->
+  <div id="splash-screen">
+    <!-- Aquí puedes agregar contenido adicional si es necesario -->
+  </div>
+
+  <!-- Contenido de la página -->
   <div id="topSection"></div>
 
   <div id="banner"></div>
@@ -229,6 +254,14 @@
     }
 
     moveTarget();
+
+    // Script para ocultar la pantalla de bienvenida después de un tiempo
+    window.addEventListener('load', () => {
+      const splashScreen = document.getElementById('splash-screen');
+      setTimeout(() => {
+        splashScreen.classList.add('hidden');
+      }, 2000); // Tiempo que la pantalla de bienvenida estará visible, en milisegundos
+    });
   </script>
 </body>
 </html>
